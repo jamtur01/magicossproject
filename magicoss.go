@@ -43,9 +43,9 @@ func (f *seqIntFlag) Set(value string) error {
 }
 
 var (
-	port    = flag.String("port", "8080", "http port to listen on.")
-	address = flag.String("interface", "", "Host or ip address to bind HTTP listener")
-	version = flag.Bool("version", false, "Print magicoss version info.")
+	port    = flag.String("port", "8080", "HTTP port to listen on.")
+	address = flag.String("interface", "", "Host or IP address on which to bind the HTTP listener")
+	version = flag.Bool("version", false, "Print magicoss version information.")
 )
 
 var (
@@ -61,7 +61,7 @@ func buildInfo() string {
 func main() {
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, "%s\n", buildInfo())
-		fmt.Fprintf(os.Stderr, "\nUsuage:\n")
+		fmt.Fprintf(os.Stderr, "\nUsage:\n")
 		flag.PrintDefaults()
 	}
 	flag.Parse()
